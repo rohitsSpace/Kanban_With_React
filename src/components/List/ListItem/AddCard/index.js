@@ -28,7 +28,7 @@ const AddCard = ({ onAddItem }) => {
                   <Form.Control
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Enter card desc"
+                    placeholder="Enter card title"
                     onChange={(e) => setTitle(e.target.value)}
                     value={title}
                     type="text"
@@ -40,7 +40,7 @@ const AddCard = ({ onAddItem }) => {
                   <Form.Control
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Enter card title"
+                    placeholder="Enter card desc"
                     onChange={(e) => setDes(e.target.value)}
                     value={des}
                     as="textarea"
