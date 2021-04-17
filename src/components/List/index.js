@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { DragDropContext } from "react-beautiful-dnd";
 import { Col, Row, ListGroup } from "react-bootstrap";
-import { playlistIcon } from "../../constants/icon";
+import { listIcon } from "../../constants/icon";
 import { isEmpty } from "lodash";
 import useLocalStorage from "../../hooks/useLocalStorage";
 import Icon from "../Icon";
@@ -20,7 +20,7 @@ const KabanlistItems = ({ listItems, removeItem, onDragEnd }) => {
               <ListGroup.Item className="header">
                 <Row>
                   <Col className="col-auto pr-0">
-                    <Icon icon={playlistIcon} fixedWidth={true} />
+                    <Icon icon={listIcon} fixedWidth={true} />
                   </Col>
                   <Col>Your Board</Col>
                 </Row>

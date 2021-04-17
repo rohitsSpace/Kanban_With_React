@@ -26,7 +26,6 @@ const ListItem = ({ item, removeItem }) => {
     const a = [...cardsItem, itemToAdd];
     setCardsItem(a);
     currentList.items.push(itemToAdd);
-    console.log("allMyCardsItems", allMyCardsItems);
     setItem(allMyCardsItems);
   };
 
@@ -39,9 +38,8 @@ const ListItem = ({ item, removeItem }) => {
     setCurrentList(myList);
   }, [item, item.items]);
 
-  console.log("currentList", currentList);
   return (
-    <Col>
+    <Col lg="4" xs="12" md="6">
       <Row>
         <Col>
           <h2 className="mb-0">{item.name}</h2>
@@ -61,7 +59,7 @@ const ListItem = ({ item, removeItem }) => {
         <Col>
           <Button variant="success" onClick={() => setOpenAdd(!openAdd)}>
             <Icon icon={addIcon} className="mr-2" />
-            Add
+            Add Cards
           </Button>
         </Col>
       </Row>
@@ -80,7 +78,7 @@ const ListItem = ({ item, removeItem }) => {
               {...provided.droppableProps}
               ref={provided.innerRef}
               style={{
-                background: snapshot.isDraggingOver ? "lightblue" : "lightgrey",
+                background: snapshot.isDraggingOver ? "gray" : "black",
               }}
               className="min-vh-100"
             >
@@ -99,13 +97,16 @@ const ListItem = ({ item, removeItem }) => {
                             margin: "0 0 8px 0",
                             minHeight: "50px",
                             backgroundColor: snapshot.isDragging
-                              ? "#263B4A"
-                              : "#456C86",
+                              ? "#3c343f"
+                              : "#efbe66",
                             color: "white",
                             ...provided.draggableProps.style,
                           }}
                         >
-                          {item.content}
+                          <div>{item.content && item.content.title}</div>
+                          <small className="text-success">
+                            {item.content && item.content.des}
+                          </small>
                         </div>
                       );
                     }}

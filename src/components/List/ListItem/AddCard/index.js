@@ -5,7 +5,8 @@ import { Form } from "react-bootstrap";
 import { Accordion, Card } from "react-bootstrap";
 
 const AddCard = ({ onAddItem }) => {
-  const [content, setContent] = useState("");
+  const [des, setDes] = useState("");
+  const [title, setTitle] = useState("");
   return (
     <Accordion className="mb-2" defaultActiveKey="0">
       <Card>
@@ -16,29 +17,41 @@ const AddCard = ({ onAddItem }) => {
           <Card.Body>
             <Form
               onSubmit={(e) => {
-                onAddItem(content);
+                onAddItem({ des, title });
               }}
             >
               <Form.Row className="align-items-center">
                 <Col>
                   <Form.Label htmlFor="inlineFormInput" srOnly>
-                    Add Card
+                    Add title
                   </Form.Label>
                   <Form.Control
                     className="mb-2"
                     id="inlineFormInput"
-                    placeholder="Enter card content"
-                    onChange={(e) => setContent(e.target.value)}
-                    value={content}
+                    placeholder="Enter card desc"
+                    onChange={(e) => setTitle(e.target.value)}
+                    value={title}
                     type="text"
+                    required
+                  />
+                  <Form.Label htmlFor="inlineFormInput" srOnly>
+                    Add desc
+                  </Form.Label>
+                  <Form.Control
+                    className="mb-2"
+                    id="inlineFormInput"
+                    placeholder="Enter card title"
+                    onChange={(e) => setDes(e.target.value)}
+                    value={des}
+                    as="textarea"
+                    rows={3}
+                    required
                   />
                 </Col>
-                <Col xs="auto">
-                  <Button type="submit" className="mb-2">
-                    Create
-                  </Button>
-                </Col>
               </Form.Row>
+              <Button type="submit" className="mb-2">
+                Create
+              </Button>
             </Form>
           </Card.Body>
         </Accordion.Collapse>
