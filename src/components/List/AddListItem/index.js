@@ -45,6 +45,7 @@ const AddListItem = ({ onAddItem }) => {
                     onChange={handleOnChange}
                     value={item ? item.name.value : ""}
                     type="text"
+                    required
                   />
                 </Col>
                 <Col xs="auto">
