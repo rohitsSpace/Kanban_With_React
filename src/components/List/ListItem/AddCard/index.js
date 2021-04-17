@@ -50,7 +50,7 @@ const AddCard = ({ onAddItem }) => {
                 </Col>
               </Form.Row>
               <Button type="submit" className="mb-2">
-                Create
+                Add
               </Button>
             </Form>
           </Card.Body>
