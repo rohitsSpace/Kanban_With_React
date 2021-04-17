@@ -1,0 +1,18 @@
+@import "~bootstrap/scss/bootstrap";
+
+$blue: #107ba1;
+$link-color: $blue;
+$link-hover-decoration: none;
+$link-hover-color: darken($link-color, 20%);
+
+// Make text look like a link
+.text-link {
+  color: $link-color !important;
+  cursor: pointer;
+  &:hover {
+    color: $link-hover-color !important;
+  }
+}
+a:hover .text-link {
+  color: $link-hover-color !important;
+}
